@@ -22,5 +22,12 @@ for nom_element in nom: #parcourir les element dans prix
     nom_selection.append(text_nom) #ajouter dans la liste les prix
 for resultatnom in nom_selection: #
     print(resultatnom)
+livres = list(zip(nom_selection, prix_selection))
+
+# Afficher les noms et les prix des livres ensemble
+for livre in livres:
+    nom, prix = livre
+    print(nom , prix)
+
 
 
