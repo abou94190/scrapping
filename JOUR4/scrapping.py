@@ -6,7 +6,7 @@ response = requests.get(url)
 #print(content) 
 
 soup = BeautifulSoup(response.content, 'html.parser')
-
+#Trouver le prix du livre
 prix = soup.find_all('span', class_='a-color-price a-text-bold') # 
 prix_selection = [] #liste vide pour stocker les prix des livres
 for prix_element in prix: #parcourir les element dans prix
@@ -14,6 +14,13 @@ for prix_element in prix: #parcourir les element dans prix
     prix_selection.append(text_prix) #ajouter dans la liste les prix
 for resultatprix in prix_selection: #afficher les prix de la liste
     print(resultatprix)
-
+#Trouver le nom du livre
+nom = soup.find_all('span', class_='a-size-base a-color-base browse-text-line browse-larger-text-one-line') # 
+nom_selection = [] 
+for nom_element in nom: #parcourir les element dans prix
+    text_nom = nom_element.text.strip() #selectionner le texte du prix
+    nom_selection.append(text_nom) #ajouter dans la liste les prix
+for resultatnom in nom_selection: #
+    print(resultatnom)
 
 
